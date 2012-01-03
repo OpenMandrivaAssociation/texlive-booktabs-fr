@@ -6,7 +6,7 @@
 # catalog-version 1.00
 Name:		texlive-booktabs-fr
 Version:	1.00
-Release:	1
+Release:	2
 Summary:	French translation of booktabs documentation
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/info/translations/booktabs/fr
