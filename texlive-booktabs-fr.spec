@@ -1,18 +1,12 @@
-# revision 21948
-# category Package
-# catalog-ctan /info/translations/booktabs/fr
-# catalog-date 2011-04-03 23:29:51 +0200
-# catalog-license lppl
-# catalog-version 1.00
 Name:		texlive-booktabs-fr
-Version:	1.00
-Release:	12
+Version:	21948
+Release:	1
 Summary:	French translation of booktabs documentation
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/info/translations/booktabs/fr
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/booktabs-fr.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/booktabs-fr.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/booktabs-fr.r21948.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/booktabs-fr.doc.r21948.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -30,24 +24,10 @@ Bayart.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Tue Jan 03 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.00-2
-+ Revision: 749839
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.00-1
-+ Revision: 717970
-- texlive-booktabs-fr
-- texlive-booktabs-fr
-- texlive-booktabs-fr
-- texlive-booktabs-fr
-
