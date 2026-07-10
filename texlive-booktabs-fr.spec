@@ -1,33 +1,22 @@
-Name:		texlive-booktabs-fr
-Version:	21948
-Release:	2
+%global tl_name booktabs-fr
+%global tl_revision 79121
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.00
+Release:	%{tl_revision}.1
 Summary:	French translation of booktabs documentation
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/info/translations/booktabs/fr
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/booktabs-fr.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/booktabs-fr.doc.r%{version}.tar.xz
+License:	lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/booktabs-fr.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/booktabs-fr.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The translation comes from a collection provided by Benjamin
-Bayart.
+The translation comes from a collection provided by Benjamin Bayart.
 
-#-----------------------------------------------------------------------
-%files
-%doc %{_texmfdistdir}/doc/latex/booktabs-fr/README
-%doc %{_texmfdistdir}/doc/latex/booktabs-fr/f-booktabs.dtx
-%doc %{_texmfdistdir}/doc/latex/booktabs-fr/f-booktabs.pdf
-%doc %{_texmfdistdir}/doc/latex/booktabs-fr/ltxdoc.cfg
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar doc %{buildroot}%{_texmfdistdir}
